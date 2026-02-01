@@ -43,7 +43,7 @@ export function Contact() {
                         </div>
 
                         {/* Info Side */}
-                        <div className="bg-foreground p-6 md:p-10 lg:p-14 text-background flex flex-col gap-10 md:gap-14 relative">
+                        <div className="bg-background p-6 md:p-10 lg:p-14 text-foreground flex flex-col gap-10 md:gap-14 relative border-l border-border">
                             <div className="absolute inset-0 bg-primary/5" />
                             <div className="relative z-10 flex flex-col gap-10 md:gap-14">
                                 <div className="flex flex-col gap-4 md:gap-6">
@@ -77,7 +77,7 @@ export function Contact() {
                                     </div>
                                 </div>
 
-                                <div className="p-4 md:p-6 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-between shadow-xl backdrop-blur-sm group hover:border-primary/50 transition-colors">
+                                <div className="p-4 md:p-6 rounded-2xl border border-border bg-secondary/30 flex items-center justify-between shadow-xl backdrop-blur-sm group hover:border-primary/50 transition-colors">
                                     <div className="flex items-center gap-4">
                                         <div className="bg-primary p-2 rounded-lg text-primary-foreground">
                                             <Clock className="w-5 h-5" />

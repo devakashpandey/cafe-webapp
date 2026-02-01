@@ -88,14 +88,14 @@ export function Menu() {
 
                 <Tabs defaultValue="all" value={activeCategory} onValueChange={setActiveCategory} className="w-full">
                     <div className="flex justify-center mb-8 md:mb-12">
-                        <TabsList className="bg-background/80 backdrop-blur-md p-1.5 rounded-full h-auto flex items-center gap-1 overflow-x-auto no-scrollbar max-w-full border shadow-sm mx-auto">
+                        <TabsList className="bg-foreground p-1.5 rounded-full h-auto flex items-center gap-1 overflow-x-auto no-scrollbar max-w-full shadow-2xl mx-auto border-none">
                             {menuCategories.map((cat) => (
                                 <TabsTrigger
                                     key={cat.id}
                                     value={cat.id}
-                                    className="rounded-full px-5 md:px-8 py-2.5 md:py-3.5 font-black text-[10px] md:text-xs uppercase tracking-widest data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg transition-all shrink-0 flex items-center justify-center gap-2 flex-none h-auto border-none"
+                                    className="rounded-full px-5 md:px-8 py-2.5 md:py-3.5 font-black text-[10px] md:text-xs uppercase tracking-widest data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-lg transition-all shrink-0 flex items-center justify-center gap-2 flex-none h-auto border-none text-background/60 hover:text-background"
                                 >
-                                    <span className="text-base md:text-lg leading-none shrink-0">{cat.icon}</span>
+                                    <span className="text-lg md:text-xl leading-none shrink-0">{cat.icon}</span>
                                     <span className="leading-none">{cat.name}</span>
                                 </TabsTrigger>
                             ))}

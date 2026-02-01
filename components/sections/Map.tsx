@@ -34,7 +34,7 @@ export function MapSection() {
                             ></iframe>
                         </div>
 
-                        <div className="bg-foreground p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] text-background flex flex-col justify-center gap-8 md:gap-10 shadow-2xl relative overflow-hidden">
+                        <div className="bg-background p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] text-foreground flex flex-col justify-center gap-8 md:gap-10 shadow-2xl relative overflow-hidden border border-border">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl -mr-10 -mt-10" />
 
                             <div className="flex flex-col gap-6 relative z-10">
@@ -43,7 +43,7 @@ export function MapSection() {
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <h3 className="text-2xl md:text-3xl font-display font-black uppercase tracking-tighter">The Flagship Hub</h3>
-                                    <p className="text-lg text-background/60 leading-relaxed font-medium">
+                                    <p className="text-lg text-muted-foreground leading-relaxed font-medium">
                                         123 Chai Street, Inner Circle,<br />
                                         Connaught Place,<br />
                                         New Delhi, India - 110001
@@ -51,14 +51,14 @@ export function MapSection() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-4 relative z-10 border-t border-white/10 pt-8">
+                            <div className="flex flex-col gap-4 relative z-10 border-t border-border pt-8">
                                 <div className="flex items-center justify-between group">
-                                    <span className="text-background/40 font-bold uppercase tracking-[0.2em] text-[10px]">Distance</span>
+                                    <span className="text-muted-foreground font-bold uppercase tracking-[0.2em] text-[10px]">Distance</span>
                                     <span className="text-primary font-black">2.5 KM (Nearby)</span>
                                 </div>
                                 <div className="flex items-center justify-between group">
-                                    <span className="text-background/40 font-bold uppercase tracking-[0.2em] text-[10px]">Transport</span>
-                                    <span className="text-background font-black">Rajiv Chowk Metro</span>
+                                    <span className="text-muted-foreground font-bold uppercase tracking-[0.2em] text-[10px]">Transport</span>
+                                    <span className="text-foreground font-black">Rajiv Chowk Metro</span>
                                 </div>
                             </div>
                         </div>
