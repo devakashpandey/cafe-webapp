@@ -1,26 +1,231 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   RAMNA CAFÉ - CORE DESIGN SYSTEM (v4)
+   Strictly using Shadcn/Tailwind for Layout
+   ============================================ */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Constants - Keeping for custom gradients */
+  --brand-orange: #FF5C00;      /* Vibrant Orange */
+  --brand-saffron: #FF9F1C;     /* Saffron Gold */
+  --brand-gold: #FFBF00;        /* Pure Gold */
+  --brand-brown-dark: #120A07;  /* Deep Coffee Brown */
+  --brand-brown: #2D1A12;       /* Coffee Brown */
+  --brand-cream: #FFF9F3;       /* Warm Cream */
+  --brand-white: #FFFFFF;
+
+  /* Shadcn Native Variable Sets */
+  --radius: 0.75rem;
+  --background: #FFF9F3;
+  --foreground: #120A07;
+  --card: #FFFFFF;
+  --card-foreground: #120A07;
+  --popover: #FFFFFF;
+  --popover-foreground: #120A07;
+  --primary: #FF5C00;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5E6D3;
+  --secondary-foreground: #2D1A12;
+  --muted: #F5E6D3;
+  --muted-foreground: #6B5B4F;
+  --accent: #FFBF00;
+  --accent-foreground: #120A07;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #E8D5C4;
+  --input: #E8D5C4;
+  --ring: #FF5C00;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #120A07;
+  --foreground: #FFF9F3;
+  --card: #1D110B;
+  --card-foreground: #FFF9F3;
+  --popover: #1D110B;
+  --popover-foreground: #FFF9F3;
+  --primary: #FF5C00;
+  --primary-foreground: #FFFFFF;
+  --secondary: #2D1A12;
+  --secondary-foreground: #FFF9F3;
+  --muted: #2D1A12;
+  --muted-foreground: #A19082;
+  --accent: #FFBF00;
+  --accent-foreground: #120A07;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #FF5C00;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom Scrollbar - Professional Aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--brand-orange), var(--brand-gold));
+  border-radius: 10px;
+}
+
+/* ============================================
+   ESSENTIAL CUSTOM HELPERS (Keep minimal)
+   ============================================ */
+
+.text-premium-gradient {
+  background: linear-gradient(135deg, #FF5C00 0%, #FF9F1C 50%, #FFBF00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s linear infinite alternate;
+}
+
+@keyframes slow-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* ============================================
+   SHADCN THEME LAYER
+   ============================================ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ============================================
+   SECTION SCROLL ANIMATIONS
+   ============================================ */
+
+/* Intersection Observer-based Fade In Animations */
+.section-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Children Animation */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+/* Smooth Link Scrolling Enhancement */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navbar */
+}
+
+/* Page Transition Animation */
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+main {
+  animation: page-fade-in 0.5s ease-out;
+}
+
+/* Scale on Scroll Animation */
+.scale-on-scroll {
+  transition: transform 0.3s ease-out;
+}
+
+.scale-on-scroll:hover {
+  transform: scale(1.02);
 }

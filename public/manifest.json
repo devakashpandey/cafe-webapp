@@ -1,0 +1,39 @@
+{
+    "name": "RAMNA CAFÉ",
+    "short_name": "Ramna",
+    "description": "Premium chai café experience - Traditional recipes, modern flavors",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0C0A09",
+    "theme_color": "#EA580C",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["food", "lifestyle"],
+    "screenshots": [
+        {
+            "src": "/screenshot-wide.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/screenshot-mobile.png",
+            "sizes": "750x1334",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ]
+}
