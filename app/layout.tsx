@@ -4,25 +4,25 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { TawkChat } from "@/components/widgets/TawkChat";
 
 export const metadata: Metadata = {
-  title: "Ramna Café - Authentic Chai & Delicious Food Experience",
-  description: "Welcome to Ramna Café! Experience the authentic taste of India with our premium masala chai, gourmet burgers, stone-baked pizzas, and refreshing mocktails. Your favorite cafe destination.",
+  title: "CAFÉ RAMNA - Authentic Chai & Delicious Food Experience",
+  description: "Welcome to CAFÉ RAMNA! Experience the authentic taste of India with our premium masala chai, gourmet burgers, stone-baked pizzas, and refreshing mocktails. Your favorite cafe destination.",
   keywords: "ramna cafe, chai, coffee, tea, masala chai, kulhad chai, burger, pizza, mocktail, indian cafe, restaurant, food",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Ramna Café",
+    title: "CAFÉ RAMNA",
   },
   openGraph: {
-    title: "Ramna Café - Authentic Chai & Delicious Food Experience",
-    description: "Experience the authentic taste of India at Ramna Café",
+    title: "CAFÉ RAMNA - Authentic Chai & Delicious Food Experience",
+    description: "Experience the authentic taste of India at CAFÉ RAMNA",
     images: ["/hero_chai_1769890121689.png"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ramna Café - Authentic Chai & Delicious Food Experience",
-    description: "Experience the authentic taste of India at Ramna Café",
+    title: "CAFÉ RAMNA - Authentic Chai & Delicious Food Experience",
+    description: "Experience the authentic taste of India at CAFÉ RAMNA",
   },
 };
 

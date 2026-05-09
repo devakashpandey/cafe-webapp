@@ -38,7 +38,7 @@ export function About() {
                         </div>
 
                         <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-medium">
-                            RAMNA CAFÉ has finally arrived to redefine the chai experience in your neighborhood. We are a fresh destination dedicated to the authentic soul of traditional recipes, using only 100% organic ingredients and artisanal brewing techniques.
+                            CAFÉ RAMNA has finally arrived to redefine the chai experience in your neighborhood. We are a fresh destination dedicated to the authentic soul of traditional recipes, using only 100% organic ingredients and artisanal brewing techniques.
                         </p>
 
                         <div className="grid sm:grid-cols-2 gap-3 md:gap-4">

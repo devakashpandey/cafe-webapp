@@ -52,7 +52,7 @@ export function Contact() {
                                         <div className="bg-primary p-2 md:p-3 rounded-lg md:rounded-xl text-primary-foreground group-hover:rotate-12 transition-transform shadow-lg shadow-primary/30 shrink-0">
                                             <MapPin className="w-5 h-5 md:w-6 md:h-6" />
                                         </div>
-                                        <p className="text-lg md:text-xl font-medium leading-relaxed">123 Chai Street, Connaught Place, <br />New Delhi, India - 110001</p>
+                                        <p className="text-lg md:text-xl font-medium leading-relaxed">HM57+VF3, South Ramna Road, <br />Old Judges Compound, Arrah, Bihar</p>
                                     </div>
                                 </div>
 

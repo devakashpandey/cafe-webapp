@@ -30,7 +30,7 @@ export function Navbar() {
                     </div>
                     <div className="flex flex-col leading-none">
                         <span className={`text-xl md:text-3xl font-black tracking-tighter uppercase font-display ${isScrolled ? "text-foreground" : "text-white"}`}>
-                            RAMNA <span className="text-primary">CAFÉ</span>
+                            CAFÉ <span className="text-primary">RAMNA</span>
                         </span>
                         <span className={`text-[8px] md:text-[10px] tracking-[0.3em] font-bold uppercase mt-0.5 ${isScrolled ? "text-muted-foreground" : "text-white/70"}`}>
                             Premium Experience

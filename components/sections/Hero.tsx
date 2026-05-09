@@ -9,7 +9,7 @@ import { stats } from "@/lib/constants";
 
 export function Hero() {
     return (
-        <section id="home" className="relative h-screen min-h-[650px] flex items-center justify-center overflow-hidden">
+        <section id="home" className="dark relative h-screen min-h-[650px] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0 scale-110">
                 <Image
                     src="/cafe_interior_1769890221754.png"
@@ -31,7 +31,7 @@ export function Hero() {
 
                 <h1 className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase font-display leading-[1.1] tracking-tighter mb-4 md:mb-6 drop-shadow-2xl">
                     Welcome to<br />
-                    <span className="text-premium-gradient">RAMNA CAFÉ</span>
+                    <span className="text-premium-gradient">CAFÉ RAMNA</span>
                 </h1>
 
                 <p className="text-white/80 text-sm md:text-lg lg:text-xl max-w-2xl mb-6 md:mb-8 font-medium leading-relaxed px-4">

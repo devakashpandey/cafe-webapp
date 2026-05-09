@@ -24,6 +24,9 @@ export const testimonials = [
   { id: 1, name: "Rahul Sharma", role: "Early Guest", text: "Finally a place that serves real chai! The aroma of Kulhad is just amazing.", avatar: "R" },
   { id: 2, name: "Sneha Kapoor", role: "First Visitor", text: "The vibe is so fresh and energetic. Exactly what our neighborhood needed!", avatar: "S" },
   { id: 3, name: "Arjun Mehta", role: "Food Lover", text: "Tried their Tandoori Burger on day one. Absolutely blown away by the quality.", avatar: "A" },
+  { id: 4, name: "Priya Verma", role: "Regular", text: "The Desi Masala Chai reminds me of home. Perfect spice balance!", avatar: "P" },
+  { id: 5, name: "Vikram Singh", role: "Coffee Critic", text: "I came for coffee but stayed for the Chai. Exceptional service and taste.", avatar: "V" },
+  { id: 6, name: "Ananya Das", role: "Student", text: "Best place to hang out with friends. The Shakes are out of this world!", avatar: "A" },
 ];
 
 export const stats = [

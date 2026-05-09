@@ -51,51 +51,50 @@ export function Menu() {
                 </div>
 
                 {/* Search & Filter Bar */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 md:mb-10">
-                    <div className="relative w-full max-w-md">
-                        <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-6 mb-12 md:mb-16 w-full max-w-6xl mx-auto">
+                    {/* Search Input */}
+                    <div className="relative w-full lg:flex-1 group">
+                        <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-primary/40 group-focus-within:text-primary transition-colors" />
                         <Input
-                            placeholder="Search for chai, burgers, shakes..."
+                            placeholder="What are you craving today?"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="h-14 pl-14 pr-6 rounded-full bg-background border shadow-sm font-medium text-base"
+                            className="h-16 pl-16 pr-8 rounded-[1.5rem] bg-background/50 backdrop-blur-xl border-border/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] focus-visible:ring-primary/20 font-bold text-base transition-all hover:bg-background/80"
                         />
                     </div>
-                    <div className="flex gap-2">
-                        <Button
-                            variant={dietFilter === "all" ? "default" : "outline"}
-                            onClick={() => setDietFilter("all")}
-                            className="h-12 rounded-full font-bold uppercase text-[10px] tracking-widest px-6"
-                        >
-                            All Items
-                        </Button>
-                        <Button
-                            variant={dietFilter === "veg" ? "default" : "outline"}
-                            onClick={() => setDietFilter("veg")}
-                            className={`h-12 rounded-full font-bold uppercase text-[10px] tracking-widest px-6 ${dietFilter === "veg" ? "bg-green-600 hover:bg-green-700 text-white" : "border-green-600 text-green-600 hover:bg-green-600/10"}`}
-                        >
-                            <Leaf className="w-4 h-4 mr-1.5" /> Veg
-                        </Button>
-                        <Button
-                            variant={dietFilter === "nonveg" ? "default" : "outline"}
-                            onClick={() => setDietFilter("nonveg")}
-                            className={`h-12 rounded-full font-bold uppercase text-[10px] tracking-widest px-6 ${dietFilter === "nonveg" ? "bg-red-600 hover:bg-red-700 text-white" : "border-red-600 text-red-600 hover:bg-red-600/10"}`}
-                        >
-                            <Flame className="w-4 h-4 mr-1.5" /> Non-Veg
-                        </Button>
+
+                    {/* Diet Filters - Modern Toggle Group */}
+                    <div className="flex p-1.5 bg-background/50 backdrop-blur-xl rounded-[1.5rem] border border-border/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] w-fit shrink-0">
+                        {[
+                            { id: "all", label: "All Items", icon: null },
+                            { id: "veg", label: "Pure Veg", icon: Leaf, color: "text-green-500" },
+                            { id: "nonveg", label: "Non-Veg", icon: Flame, color: "text-red-500" }
+                        ].map((btn) => (
+                            <button
+                                key={btn.id}
+                                onClick={() => setDietFilter(btn.id as any)}
+                                className={`px-6 md:px-8 py-3.5 rounded-2xl font-black uppercase text-[9px] md:text-[10px] tracking-widest transition-all flex items-center gap-2 shrink-0 ${dietFilter === btn.id
+                                    ? "bg-primary text-white shadow-xl shadow-primary/20 scale-105 -translate-y-0.5"
+                                    : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+                                    }`}
+                            >
+                                {btn.icon && <btn.icon className={`w-3.5 h-3.5 ${dietFilter === btn.id ? "text-white" : btn.color}`} />}
+                                {btn.label}
+                            </button>
+                        ))}
                     </div>
                 </div>
 
                 <Tabs defaultValue="all" value={activeCategory} onValueChange={setActiveCategory} className="w-full">
-                    <div className="flex justify-center mb-8 md:mb-12">
-                        <TabsList className="bg-foreground p-1.5 rounded-full h-auto flex items-center gap-1 overflow-x-auto no-scrollbar max-w-full shadow-2xl mx-auto border-none">
+                    <div className="flex justify-center mb-10 md:mb-16">
+                        <TabsList className="bg-transparent h-auto flex items-center justify-start md:justify-center gap-2 md:gap-4 overflow-x-auto no-scrollbar w-full border-none shadow-none px-4 md:px-0 py-2">
                             {menuCategories.map((cat) => (
                                 <TabsTrigger
                                     key={cat.id}
                                     value={cat.id}
-                                    className="rounded-full px-5 md:px-8 py-2.5 md:py-3.5 font-black text-[10px] md:text-xs uppercase tracking-widest data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-lg transition-all shrink-0 flex items-center justify-center gap-2 flex-none h-auto border-none text-background/60 hover:text-background"
+                                    className="rounded-full px-5 md:px-8 py-2.5 md:py-3 font-black text-[10px] md:text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 h-auto border-none text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-primary/20 hover:text-foreground"
                                 >
-                                    <span className="text-lg md:text-xl leading-none shrink-0">{cat.icon}</span>
+                                    <span className="text-base md:text-xl leading-none shrink-0">{cat.icon}</span>
                                     <span className="leading-none">{cat.name}</span>
                                 </TabsTrigger>
                             ))}
@@ -114,36 +113,36 @@ export function Menu() {
                                 </Button>
                             </div>
                         ) : (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
                                 {filteredMenu.map((item) => (
-                                    <Card key={item.id} className="overflow-hidden border-none shadow-md hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group rounded-[1.5rem] bg-background flex flex-col">
-                                        <CardHeader className="p-0 relative aspect-[4/3] overflow-hidden">
+                                    <Card key={item.id} className="overflow-hidden border border-border/40 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 group rounded-[1.5rem] md:rounded-[2rem] bg-card/60 backdrop-blur-md flex flex-col h-full">
+                                        <div className="relative aspect-[4/3] m-2 rounded-[1rem] md:rounded-[1.5rem] overflow-hidden">
                                             <Image
                                                 src={item.image}
                                                 alt={item.name}
                                                 fill
-                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                className="object-cover group-hover:scale-110 transition-transform duration-700"
                                             />
                                             {item.badge && (
-                                                <Badge className="absolute top-3 left-3 bg-primary/90 text-white font-black uppercase text-[7px] md:text-[9px] px-3 py-1 rounded-full tracking-widest shadow-lg backdrop-blur-sm">
+                                                <Badge className="absolute top-2 left-2 bg-primary/90 text-white border-none px-2 py-0.5 uppercase font-black tracking-widest text-[7px] md:text-[8px] shadow-lg rounded-full">
                                                     {item.badge}
                                                 </Badge>
                                             )}
-                                        </CardHeader>
-                                        <CardContent className="p-4 md:p-5 flex flex-col gap-2 md:gap-3 flex-grow">
-                                            <div className="flex flex-col gap-1">
-                                                <div className="flex gap-0.5 text-primary scale-90 origin-left">
-                                                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-current" />)}
-                                                </div>
-                                                <h3 className="text-lg md:text-xl font-bold font-display tracking-tight group-hover:text-primary transition-colors uppercase leading-tight">{item.name}</h3>
+                                        </div>
+                                        <CardContent className="px-4 py-3 md:py-4 flex flex-col gap-1 flex-grow">
+                                            <div className="flex items-center gap-1 mb-1">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <Star key={i} className="w-2.5 h-2.5 fill-primary text-primary opacity-80" />
+                                                ))}
                                             </div>
-                                            <p className="text-[12px] md:text-sm text-muted-foreground font-medium line-clamp-2 leading-snug">
+                                            <h3 className="text-sm md:text-base font-display font-black tracking-tight group-hover:text-primary transition-colors line-clamp-1 uppercase leading-tight">{item.name}</h3>
+                                            <p className="text-[9px] md:text-[11px] text-muted-foreground leading-snug font-medium line-clamp-2">
                                                 {item.description}
                                             </p>
                                         </CardContent>
-                                        <CardFooter className="px-4 md:px-5 pb-4 md:pb-5 pt-0 flex items-center justify-between mt-auto">
-                                            <span className="text-xl md:text-2xl font-black text-primary">{item.price}</span>
-                                            <Button variant="outline" className="h-8 md:h-10 border-primary/20 text-primary hover:bg-primary hover:text-white rounded-xl font-black text-[9px] uppercase tracking-widest px-4 transition-all group-hover:scale-105">
+                                        <CardFooter className="px-4 pb-4 md:pb-5 pt-0 flex items-center justify-between mt-auto">
+                                            <span className="text-base md:text-lg font-black text-primary tracking-tighter">{item.price}</span>
+                                            <Button size="sm" className="rounded-xl h-7 md:h-8 px-3 md:px-4 font-black uppercase text-[8px] md:text-[9px] tracking-widest bg-foreground text-background hover:bg-primary hover:text-white transition-all duration-300">
                                                 Add
                                             </Button>
                                         </CardFooter>

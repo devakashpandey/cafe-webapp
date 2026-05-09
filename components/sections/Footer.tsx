@@ -66,7 +66,7 @@ export function Footer() {
                 <Separator className="bg-white/5 mb-8 md:mb-12" />
 
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-[7px] md:text-[9px] font-black uppercase tracking-[0.3em] text-muted-foreground">
-                    <span className="text-center lg:text-left">© 2024 RAMNA CAFÉ BRANDING • ALL RIGHTS RESERVED.</span>
+                    <span className="text-center lg:text-left">© 2024 CAFÉ RAMNA BRANDING • ALL RIGHTS RESERVED.</span>
                     <div className="flex flex-wrap justify-center gap-4 md:gap-8">
                         <a href="#" className="hover:text-primary transition-colors">Privacy Charter</a>
                         <a href="#" className="hover:text-primary transition-colors">Terms of Experience</a>

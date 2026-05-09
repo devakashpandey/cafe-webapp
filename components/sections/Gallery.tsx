@@ -12,7 +12,7 @@ export function Gallery() {
                 <div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-8 md:mb-12 gap-6 text-center md:text-left">
                     <div className="flex flex-col gap-2 md:gap-3">
                         <Badge variant="outline" className="w-fit mx-auto md:mx-0 border-primary text-primary font-black uppercase px-4 py-1 rounded-full tracking-widest text-[10px]">Visual Vibe</Badge>
-                        <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter uppercase leading-none">Inside <span className="text-premium-gradient">RAMNA CAFÉ</span></h2>
+                        <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter uppercase leading-none">Inside <span className="text-premium-gradient">CAFÉ RAMNA</span></h2>
                     </div>
                     <Button size="lg" className="h-12 md:h-14 rounded-full px-8 md:px-10 font-black uppercase tracking-widest flex gap-2 shadow-xl shadow-primary/10 text-xs">
                         <Instagram className="w-4 h-4 md:w-5 md:h-5" /> Explore Instagram
